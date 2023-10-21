@@ -11,9 +11,11 @@
   --color-base-white: #fff;
   --color-base-gray-100: #f5f5f5;
   --color-base-gray-300: #8d8d99;
+  --color-base-gray-500: #3D3D3D;
   --color-base-gray-900: #202024;
   font-family: "Mulish", sans-serif;
 }
+
 
 body {
   background: var(--color-base-white);
@@ -35,6 +37,7 @@ body {
 
 main {
   background: var(--color-base-gray-100);
+  overflow-y: scroll;
 }
 
 header,
@@ -67,11 +70,86 @@ header form {
   overflow: hidden;
 }
 
+.input-wrapper input{
+  font-family: "Mulish", sans-serif;
+  width: 100%;
+  padding: 1.6rem;
+  background: var(--color-base-gray-100);
+  border-radius: .6rem;
+  border: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.input-wrapper ipnut::placeholder{
+  opacity: 0.56;
+  color: var(--color-base-gray-500);
+}
+
 .avatar{
   width: 4.2rem;
   height: 4.2rem;
   object-fit: cover;
   border-radius: 50%;
+}
+
+/* galeria */
+
+main h1{
+  padding-top: 1.6rem;
+  font-size: 2.4rem;
+}
+
+.gallery{
+  margin-top: 3.2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2.2rem;
+}
+
+.item{
+  background: var(--color-base-white);
+  border-radius: .8rem;
+  overflow: hidden;
+}
+
+.item img{
+  aspect-ratio: 16/9;
+  width: 100%;
+  object-fit: cover;
+  /* filter: grayscale(1); */
+  transition-property: filter, transform;
+  transition: filter 350ms ease-out, transform 400ms ease-out;
+}
+
+.item img:hover{
+  filter: hue-rotate(7deg) contrast(101%) saturate(180%);
+  transform: scale(1.1);
+}
+
+.details{
+  padding: 2.2rem;
+  background: var(--color-base-white);
+  z-index: 1;
+  position: relative;
+}
+
+.details h2{
+  font-size: 1.8rem;
+}
+
+.tags{
+  margin-top: 1.2rem;
+}
+
+.tags span{
+  padding: .6rem;
+  background: var(--color-base-gray-100);
+  border-radius: .4rem;
+  line-height: 0;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 footer p{
